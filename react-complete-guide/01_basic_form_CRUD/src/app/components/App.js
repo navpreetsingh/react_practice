@@ -18,8 +18,8 @@ const App = () => {
       return [newExpenseData, ...prevExpenses];
     });
 
-    // console.log('New Data: ', newExpenseData);
-    // console.log('Final Data: ', expenses);
+    console.log('New Data: ', newExpenseData);
+    console.log('Final Data: ', expenses);
   };
 
   return (

@@ -59,7 +59,7 @@ const Form = (props) => {
     const expense = {
       id: `e${Math.floor(Math.random() * 100).toString()}`,
       title: title,
-      amount: amount,
+      amount: +amount,
       date: new Date(date),
     };
     console.log(expense);
@@ -67,7 +67,13 @@ const Form = (props) => {
     setAmount(0);
     setDate(new Date());
     // Sending date to parent function (create.js)
+    // console.log('New Expense Added: ', expense);
     props.onSave(expense);
+    props.OnClose(1);
+  };
+
+  const closeFormHandler = (event) => {
+    props.OnClose(1);
   };
 
   return (
@@ -99,7 +105,11 @@ const Form = (props) => {
           />
         </div>
       </div>
+
       <div className="new-expense__actions">
+        <button type="close" onClick={closeFormHandler}>
+          Close
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>

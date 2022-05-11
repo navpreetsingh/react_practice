@@ -3,6 +3,7 @@ import Card from '../../UI/Card';
 import ExpenseItem from './partials/item';
 import ExpenseFilter from './partials/filter';
 import { useState } from 'react';
+import ExpenseChart from './partials/chart';
 
 let filteredExpenses;
 
@@ -18,6 +19,7 @@ const Expense = (props) => {
     <div>
       <Card className="expenses">
         <ExpenseFilter onChangeFilter={filterHandler} />
+        <ExpenseChart expenses={filteredExpenses} />
         <li>
           <ConditionalItemDisplay />
         </li>
